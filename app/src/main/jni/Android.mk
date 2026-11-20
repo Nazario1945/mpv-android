@@ -3,9 +3,6 @@ LOCAL_PATH:= $(call my-dir)
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
 PREFIX = $(PREFIX32)
 endif
-ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
-PREFIX = $(PREFIX64)
-endif
 ifeq ($(TARGET_ARCH_ABI),x86_64)
 PREFIX = $(PREFIX_X64)
 endif
