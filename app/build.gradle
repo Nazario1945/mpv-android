@@ -57,10 +57,10 @@ android {
             reset()
             // include only the ABIs that were actually built
             project.ext.abiCodes.each { abi, _ ->
-                if (new File(project.projectDir, "src/main/jniLibs/${abi}").exists())
+                if (abi == "armeabi-v7a" && new File(project.projectDir, "src/main/jniLibs/${abi}").exists())
                     include(abi)
             }
-            universalApk true // build an APK with all ABIs too
+            universalApk false // build an APK with all ABIs too
         }
     }
 }

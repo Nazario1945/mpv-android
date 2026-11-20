@@ -41,29 +41,3 @@ jobs:
       - name: Build
         run: |
           buildscripts/include/ci.sh build
-
-      - uses: actions/upload-artifact@v7
-        with:
-          name: mpv-android-armeabi-v7a
-          path: app/build/outputs/apk/default/debug/app-default-armeabi-v7a-debug.apk
-          archive: false
-
-      - uses: actions/upload-artifact@v7
-        with:
-          name: mpv-android-arm64-v8a
-          path: app/build/outputs/apk/default/debug/app-default-arm64-v8a-debug.apk
-          archive: false
-
-      - uses: actions/upload-artifact@v7
-        with:
-          name: mpv-android-default-release-unsigned
-          path: app/build/outputs/apk/default/release/*-unsigned.apk
-          if-no-files-found: error
-          archive: false
-
-      - uses: actions/upload-artifact@v7
-        with:
-          name: mpv-android-release-mapping
-          path: app/build/outputs/mapping/**/mapping.txt
-          if-no-files-found: warn
-          archive: false

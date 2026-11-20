@@ -50,7 +50,7 @@ printf '%s\n' \
 if [ -n "$DONT_BUILD_RELEASE" ]; then
 	./gradlew assembleDebug
 else
-	./gradlew assembleDebug assembleRelease
+	./gradlew assembleDebug
 	if [ -n "$BUNDLE" ]; then
 		# needs to be a separate invocation due to AGP bugs...
 		./gradlew bundleRelease
