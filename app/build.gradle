@@ -15,6 +15,7 @@ android {
         versionName "2026-09-17-release"
 
         vectorDrawables.useSupportLibrary = true
+        resConfigs "es", "en"
 
         // Load information about the NDK to use
         def props = new Properties()
