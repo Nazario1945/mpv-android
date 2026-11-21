@@ -52,6 +52,9 @@ jobs:
         run: |
           buildscripts/include/ci.sh build
           ./gradlew assembleRelease
+      - name: Reglas faltantes R8
+        if: failure()
+        run: cat app/build/outputs/mapping/defaultRelease/missing_rules.txt || true
       - name: Publish ARMv7 APK
         uses: actions/upload-artifact@v4
         with:

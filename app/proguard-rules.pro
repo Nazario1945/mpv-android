@@ -1,6 +1,5 @@
--dontobfuscate
-
-# for JNI interfacing
--keep class is.xyz.mpv.MPVLib {
-	*;
-}
+-keepclasseswithmembernames class * { native <methods>; }
+-keep class is.xyz.mpv.MPVLib { *; }
+-keep class is.xyz.mpv.MPVLib$* { *; }
+-keep interface is.xyz.mpv.MPVLib$* { *; }
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
