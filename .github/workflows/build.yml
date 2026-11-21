@@ -15,6 +15,11 @@ jobs:
           java-version: '17'
           distribution: temurin
 
+
+      - name: Decodificar Keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ${{ github.workspace }}/release.jks
+
       - name: Export env vars
         run: buildscripts/include/ci.sh export >>$GITHUB_ENV
 
